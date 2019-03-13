@@ -1,0 +1,20 @@
+.button {
+  background-color: black;
+  color: yellow;
+  border-radius: 25px;
+  height: 80px;
+  width: 160px;
+  font-size: 30px;
+  border-color: yellow;
+}
+
+.button:hover {
+  background-color: yellow;
+  color: black;
+  border-color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
