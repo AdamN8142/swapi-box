@@ -7,9 +7,23 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      pageStatus: 'splash'
+      pageStatus: 'splash',
+      films: {}
     }
   }
+
+
+  componentDidMount() {
+    const url = "https://swapi.co/api/films"
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+        films: data.results
+      })
+  })
+}
+
 
   enterApp = () => {
     this.setState({
