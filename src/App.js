@@ -22,10 +22,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          films: data
-        })
+          films: data.results
+        }, this.randomNumber())
       })
-      console.log(this.state)
   }
 
   randomNumber = () => {
@@ -59,7 +58,7 @@ class App extends Component {
         default:
           return (
             <div>
-              <Splash enterApp={this.enterApp} filmScroll={this.state.films.results[this.state.randomNum]}/> 
+              <Splash enterApp={this.enterApp}  randomNum={this.state.randomNum} filmScroll={this.state.films[this.state.randomNum]}/> 
             </div>
           )
       }
