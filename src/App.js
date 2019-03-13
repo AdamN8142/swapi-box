@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header'
 import FilterControls from './FilterControls'
 import Splash from './Splash'
 
@@ -36,7 +37,8 @@ class App extends Component {
     switch(this.state.pageStatus) {
       case('home'):
         return (
-          <div>
+          <div className="home-page">
+            <Header />
             <FilterControls />
           </div>
         );

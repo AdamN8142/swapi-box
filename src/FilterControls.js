@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './FilterControls.css';
 
 class FilterControls extends Component {
   constructor() {
@@ -7,14 +8,13 @@ class FilterControls extends Component {
 
   render(){
     return (
-      <div>
-        <button>People</button>
-        <button>Planets</button>
-        <button>Vehicles</button>
+      <div className="button-container">
+        <button className="people-button button">People</button>
+        <button className="planets-button button">Planets</button>
+        <button className="vehicles-button button">Vehicles</button>
       </div>
     )
   }
-
 }
 
 
