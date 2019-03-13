@@ -62,11 +62,8 @@ class App extends Component {
             </div>
           )
       }
-      //WHY DO I NEED TO PUT RESULTS IN THE FILMSCROLL I AM PASSING DOWN AS PROPS 
     }
-
   }
-
 }
 
 
