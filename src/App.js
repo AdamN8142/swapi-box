@@ -9,9 +9,11 @@ class App extends Component {
     super()
     this.state = {
       pageStatus: 'splash',
-      films: {}
+      films: [],
+      randomNum: 0
     }
   }
+
 
 
   componentDidMount() {
@@ -20,10 +22,19 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-        films: data.results
+          films: data
+        })
       })
-  })
-}
+      console.log(this.state)
+  }
+
+  randomNumber = () => {
+    let randomNumber = Math.floor((Math.random() * 6))
+    this.setState({
+      randomNum: randomNumber
+    })
+
+  }
 
 
   enterApp = () => {
@@ -34,24 +45,30 @@ class App extends Component {
 
 
   render() {
-    switch(this.state.pageStatus) {
-      case('home'):
-        return (
-          <div className="home-page">
-            <Header />
-            <FilterControls />
-          </div>
-        );
-      default:
-        return (
-          <div>
-            <Splash enterApp={this.enterApp}/> 
-          </div>
-        )   
+    if (this.state.films.length === 0) {
+      return (<div>Loading</div>)
+    } else {
+      switch (this.state.pageStatus) {
+        case ('home'):
+          return (
+            <div className="home-page">
+              <Header />
+              <FilterControls />
+            </div>
+          );
+        default:
+          return (
+            <div>
+              <Splash enterApp={this.enterApp} filmScroll={this.state.films.results[this.state.randomNum]}/> 
+            </div>
+          )
+      }
+      //WHY DO I NEED TO PUT RESULTS IN THE FILMSCROLL I AM PASSING DOWN AS PROPS 
     }
-  }   
+
+  }
 
 }
-  
+
 
 export default App;
