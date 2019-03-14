@@ -12,6 +12,7 @@ class FilterControls extends Component {
         <button className="people-button button">People</button>
         <button className="planets-button button">Planets</button>
         <button className="vehicles-button button">Vehicles</button>
+        <button className= "favorites-button button">Favorites</button>
       </div>
     )
   }

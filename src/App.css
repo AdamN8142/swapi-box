@@ -5,6 +5,8 @@
 }
 
 .home-page {
-  background-image: linear-gradient(black, rgb(24, 20, 20), yellow);  
+  background-image: linear-gradient( black, black, #feda4a);  
   height: 100vh;
 }
+
+
